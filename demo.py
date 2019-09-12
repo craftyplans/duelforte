@@ -14,6 +14,13 @@ cards = {
 
 basic_deck = [0,1,2,3,4,5]
 
+def name_cards(draw):
+    return [cards[d] for d in draw]
+
+def print_sim(character, play):
+    name = character.name
+    cards = name_cards(play)
+    return name, cards
 
 # A character has:
 # - a name
@@ -28,8 +35,11 @@ class Character:
 
     deck = basic_deck
 
+    def __init__(self,name):
+        self.name = name
+
     def sim(self, ai):
-        return (self.name, ai.play(self))
+        return (self, ai.play(self))
 
     
 # A character can take an AI and become a simulation
@@ -43,9 +53,22 @@ class RandomAI(AI):
         draw = random.sample(character.deck,
                              character.action_points)
 
-        return [cards[d] for d in draw]
+        return draw
+
+class AggroAI(AI):
+    def play(self, character):
+        attacks = [0,1,2]
+
+        aggro_deck = [c for c in character.deck if c in attacks]
+
+        draw = random.sample(aggro_deck,
+                             character.action_points)
+
+        return draw
 #
 
-NPC = Character()
+NPC1 = Character("NPC1")
+NPC2 = Character("NPC2")
 
-print(NPC.sim(RandomAI()))
+print(print_sim(*NPC1.sim(RandomAI())))
+print(print_sim(*NPC2.sim(AggroAI())))
