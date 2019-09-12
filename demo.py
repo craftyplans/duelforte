@@ -1,15 +1,15 @@
 import random
 
 # A card is ...
+cards = {
+    0 : 'Quick Attack',
+    1 : 'Hard Attack',
+    2 : 'Precise Attack',
+    3 : 'Quick Block',
+    4 : 'Hard Block',
+    5 : 'Precise Attack'
 
-QUICK_ATTACK = 0
-HARD_ATTACK = 1
-PRECISE_ATTACK = 2
-
-QUICK_BLOCK = 3
-HARD_BLOCK = 4
-PRECISE_ATTACK = 5
- 
+}
 # A deck is a set of cards
 
 basic_deck = [0,1,2,3,4,5]
@@ -35,9 +35,10 @@ class AI:
 
 class RandomAI(AI):
     def play(self, character):
-        return random.sample(character.deck,
+        draw = random.sample(character.deck,
                              character.action_points)
 
+        return [cards[d] for d in draw]
 #
 
 NPC = Character()
