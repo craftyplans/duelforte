@@ -41,6 +41,13 @@ class Character:
     def sim(self, ai):
         return (self, ai.play(self))
 
+    def take_hit(self):
+        print(f"{self.name} takes a hit")
+        self.hit_points -= 1
+
+    def is_dead(self):
+        return self.hit_points <= 0
+
     
 # A character can take an AI and become a simulation
 
@@ -72,3 +79,28 @@ NPC2 = Character("NPC2")
 
 print(print_sim(*NPC1.sim(RandomAI())))
 print(print_sim(*NPC2.sim(AggroAI())))
+
+
+### Combat rules
+### One for each card.
+
+def quick_attack_rule(target, target_hand):
+    if 3 not in target_hand:
+        target.take_hit()
+
+def hard_attack_rule(target, target_hand):
+    if 4 not in target_hand:
+        target.take_hit()
+
+def precise_attack_rule(target, target_hand):
+    if 4 not in target_hand:
+        target.take_hit()
+
+cards = {
+    0 : quick_attack_rule,
+    1 : hard_attack_rule,
+    2 : precise_attack_rule,
+    3 : None,
+    4 : None,
+    5 : None
+}
