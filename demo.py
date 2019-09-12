@@ -15,16 +15,21 @@ cards = {
 basic_deck = [0,1,2,3,4,5]
 
 
-# A character has a set of base hit points, a number of action points, and a deck.
+# A character has:
+# - a name
+# - a set of base hit points,
+# - a number of action points, and
+# - a deck.
 
 class Character:
+    name = "Steve"
     hit_points = 2
     action_points = 2
 
     deck = basic_deck
 
     def sim(self, ai):
-        return ai.play(self)
+        return (self.name, ai.play(self))
 
     
 # A character can take an AI and become a simulation
