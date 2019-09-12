@@ -20,7 +20,7 @@ def name_cards(draw):
 def print_sim(character, play):
     name = character.name
     cards = name_cards(play)
-    return name, cards
+    print(name, cards)
 
 # A character has:
 # - a name
@@ -80,10 +80,6 @@ class AggroAI(AI):
 NPC1 = Character("Rando", RandomAI())
 NPC2 = Character("Aggro", AggroAI())
 
-print(print_sim(*NPC1.sim()))
-print(print_sim(*NPC2.sim()))
-
-
 ### Combat rules
 ### One for each card.
 
@@ -99,11 +95,34 @@ def precise_attack_rule(target, target_hand):
     if 4 not in target_hand:
         target.take_hit()
 
-cards = {
+rules = {
     0 : quick_attack_rule,
     1 : hard_attack_rule,
     2 : precise_attack_rule,
-    3 : None,
-    4 : None,
-    5 : None
+    3 : lambda x,y : None,
+    4 : lambda x,y : None,
+    5 : lambda x,y : None
 }
+
+def duel(character1, character2):
+    while not character1.is_dead() and \
+          not character2.is_dead():
+
+        c1, d1 = character1.sim()
+        c2, d2 = character2.sim()
+
+        print_sim(c1, d1)
+        for d in d1:
+            rules[d](c2,d2)
+
+        print_sim(c2, d2)
+        for d in d2:
+            rules[d](c1,d1)
+
+    if character1.is_dead():
+        print(f"{character1.name} is dead.")
+
+    if character2.is_dead():
+        print(f"{character2.name} is dead.")
+
+duel(NPC1, NPC2)
