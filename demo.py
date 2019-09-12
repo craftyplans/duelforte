@@ -71,14 +71,15 @@ class AggroAI(AI):
 
         aggro_deck = [c for c in character.deck if c in attacks]
 
-        draw = random.sample(aggro_deck,
-                             character.action_points)
+        draw = random.choices(aggro_deck,
+                              k=character.action_points)
 
         return draw
 #
 
-NPC1 = Character("Rando", RandomAI())
-NPC2 = Character("Aggro", AggroAI())
+NPC1 = Character("RandoTank", RandomAI())
+NPC1.hit_points = 7
+NPC2 = Character("AggroHero", AggroAI())
 
 ### Combat rules
 ### One for each card.
@@ -86,14 +87,20 @@ NPC2 = Character("Aggro", AggroAI())
 def quick_attack_rule(target, target_hand):
     if 3 not in target_hand:
         target.take_hit()
+    else:
+        print(f"{target.name} blocks a Quick Attack")
 
 def hard_attack_rule(target, target_hand):
     if 4 not in target_hand:
         target.take_hit()
+    else:
+        print(f"{target.name} blocks a Hard Attack")
 
 def precise_attack_rule(target, target_hand):
     if 4 not in target_hand:
         target.take_hit()
+    else:
+        print(f"{target.name} blocks a Precise Attack")
 
 rules = {
     0 : quick_attack_rule,
@@ -105,6 +112,8 @@ rules = {
 }
 
 def duel(character1, character2):
+    ### Returns the winner
+
     while not character1.is_dead() and \
           not character2.is_dead():
 
@@ -112,17 +121,39 @@ def duel(character1, character2):
         c2, d2 = character2.sim()
 
         print_sim(c1, d1)
+        print_sim(c2, d2)
+        
         for d in d1:
             rules[d](c2,d2)
 
-        print_sim(c2, d2)
         for d in d2:
             rules[d](c1,d1)
 
-    if character1.is_dead():
+    if character1.is_dead() and not character2.is_dead():
         print(f"{character1.name} is dead.")
-
-    if character2.is_dead():
+        return character2
+    elif character2.is_dead() and not character1.is_dead():
         print(f"{character2.name} is dead.")
+        return character1
+    else:
+        print(f"Both characters are dead.")
+        return None
 
-duel(NPC1, NPC2)
+winner = duel(NPC1, NPC2)
+
+if winner:
+    print(f"The winner is {winner.name}")
+
+#wins1 = 0
+#wins2 = 0
+#for i in range(30):
+#    winner = duel(NPC1, NPC2)
+#
+#    if winner == NPC1:
+#        wins1+=1
+#
+#    if winner == NPC2:
+#        wins2+=1
+#
+#print(f"{NPC1.name} wins: {wins1}")
+#print(f"{NPC2.name} wins: {wins2}")
