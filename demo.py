@@ -32,7 +32,7 @@ class Character:
     name = "Steve"
     ai = None
 
-    hit_points = 2
+    hit_points = 5
     action_points = 2
 
     deck = basic_deck
