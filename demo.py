@@ -30,16 +30,19 @@ def print_sim(character, play):
 
 class Character:
     name = "Steve"
+    ai = None
+
     hit_points = 2
     action_points = 2
 
     deck = basic_deck
 
-    def __init__(self,name):
+    def __init__(self,name, ai):
         self.name = name
+        self.ai = ai
 
-    def sim(self, ai):
-        return (self, ai.play(self))
+    def sim(self):
+        return (self, self.ai.play(self))
 
     def take_hit(self):
         print(f"{self.name} takes a hit")
@@ -74,11 +77,11 @@ class AggroAI(AI):
         return draw
 #
 
-NPC1 = Character("NPC1")
-NPC2 = Character("NPC2")
+NPC1 = Character("Rando", RandomAI())
+NPC2 = Character("Aggro", AggroAI())
 
-print(print_sim(*NPC1.sim(RandomAI())))
-print(print_sim(*NPC2.sim(AggroAI())))
+print(print_sim(*NPC1.sim()))
+print(print_sim(*NPC2.sim()))
 
 
 ### Combat rules
