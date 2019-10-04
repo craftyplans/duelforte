@@ -9,8 +9,6 @@ PC = Character("Hero", HumanInput())
 
 winner = duel(NPC1, PC)
 
-if winner:
-    print(f"The winner is {winner.name}")
 
 #wins1 = 0
 #wins2 = 0

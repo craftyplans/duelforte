@@ -28,10 +28,14 @@ def duel(character1, character2):
 
     if character1.is_dead() and not character2.is_dead():
         print(f"{character1.name} is dead.")
-        return character2
+        winner = character2
     elif character2.is_dead() and not character1.is_dead():
         print(f"{character2.name} is dead.")
-        return character1
+        winner = character1
     else:
         print(f"Both characters are dead.")
-        return None
+
+    if winner:
+        print(f"The winner is {winner.name}.")
+
+    return winner
