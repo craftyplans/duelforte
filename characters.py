@@ -1,14 +1,6 @@
 import cards as c
 import random
 
-def name_cards(draw):
-    return [c.cards[d] for d in draw]
-
-def print_sim(character, play):
-    name = character.name
-    cards = name_cards(play)
-    print(name, cards)
-
 # A character has:
 # - a name
 # - a set of base hit points,
