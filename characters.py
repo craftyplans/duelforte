@@ -45,7 +45,9 @@ class HumanInput(AI):
         draw = []
         for a in range(character.action_points):
             available_cards = set(character.deck) - set(draw)
-            print(f"Cards Available: {available_cards}")
+            print(f"Cards Available:")
+            for ac in available_cards:
+                print(f"{ac}: {c.cards[ac]}")
 
             action = None
             while action is None:
