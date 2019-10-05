@@ -8,6 +8,9 @@ def print_sim(character, play):
     cards = name_cards(play)
     print(name, cards)
 
+def display_character(character):
+     print(f"{character.name} : {character.hit_points} HP")
+
 def duel(character1, character2):
     ### Returns the winner
     r = 0
@@ -21,8 +24,8 @@ def duel(character1, character2):
         r += 1
         print(f"Combat Round {r}")
 
-        print(f"{character1.name} : {character1.hit_points} HP")
-        print(f"{character2.name} : {character2.hit_points} HP")
+        display_character(character1)
+        display_character(character2)
 
         c1, d1 = character1.sim()
         c2, d2 = character2.sim()
