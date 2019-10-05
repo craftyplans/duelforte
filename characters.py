@@ -13,12 +13,14 @@ class Character:
 
     hit_points = 5
     action_points = 2
+    magic_points = 2
 
-    deck = c.basic_deck
+    deck = None
 
     def __init__(self,name, ai):
         self.name = name
         self.ai = ai
+        self.deck = c.basic_deck.copy()
 
     def sim(self):
         return (self, self.ai.play(self))
@@ -73,6 +75,9 @@ class AggroAI(AI):
         attacks = [0,1,2]
 
         aggro_deck = [c for c in character.deck if c in attacks]
+
+        if len(aggro_deck) == 0:
+            aggro_deck = character.deck
 
         draw = random.choices(aggro_deck,
                               k=character.action_points)

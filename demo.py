@@ -2,7 +2,8 @@ from duel import duel
 from characters import *
 
 NPC1 = Character("RandoTank", RandomAI())
-NPC1.hit_points = 7
+NPC1.hit_points = 6
+
 NPC2 = Character("AggroHero", AggroAI())
 
 PC = Character("Hero", HumanInput())

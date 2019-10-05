@@ -31,10 +31,10 @@ def duel(character1, character2):
         print_sim(c2, d2)
         
         for d in d1:
-            c.rules[d](c2,d2)
+            c.rules[d](c1, c2,d2)
 
         for d in d2:
-            c.rules[d](c1,d1)
+            c.rules[d](c2, c1,d1)
 
         ## line break
         print("")
