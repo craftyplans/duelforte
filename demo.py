@@ -1,14 +1,24 @@
 from duel import duel
 from characters import *
 
-NPC1 = Character("RandoTank", RandomAI())
-NPC1.hit_points = 6
+NPC1 = Character("AggroBaddy", AggroAI())
 
-NPC2 = Character("AggroHero", AggroAI())
+NPC2 = Character("RandoTank", RandomAI())
+NPC2.hit_points = 7
+
+opponents = {
+    1: NPC1,
+    2: NPC2
+}
+
+print("Choose your opponent (Enter number):\n1 : AggroBaddy\n2 : RandoTank")
+
+opponent = opponents[int(input())]
 
 PC = Character("Hero", HumanInput())
+PC.deck.append(6)
 
-winner = duel(NPC1, PC)
+winner = duel(opponent, PC)
 
 
 #wins1 = 0
