@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/skyrmysh/static/css/main.76b973c4.chunk.css",
+    "main.js": "/skyrmysh/static/js/main.9a5ebba6.chunk.js",
+    "main.js.map": "/skyrmysh/static/js/main.9a5ebba6.chunk.js.map",
+    "runtime-main.js": "/skyrmysh/static/js/runtime-main.c67951f4.js",
+    "runtime-main.js.map": "/skyrmysh/static/js/runtime-main.c67951f4.js.map",
+    "static/js/2.997c27e9.chunk.js": "/skyrmysh/static/js/2.997c27e9.chunk.js",
+    "static/js/2.997c27e9.chunk.js.map": "/skyrmysh/static/js/2.997c27e9.chunk.js.map",
+    "index.html": "/skyrmysh/index.html",
+    "precache-manifest.15ca0cbf8245efc9c8a4319d8d90806d.js": "/skyrmysh/precache-manifest.15ca0cbf8245efc9c8a4319d8d90806d.js",
+    "service-worker.js": "/skyrmysh/service-worker.js",
+    "static/css/main.76b973c4.chunk.css.map": "/skyrmysh/static/css/main.76b973c4.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c67951f4.js",
+    "static/js/2.997c27e9.chunk.js",
+    "static/css/main.76b973c4.chunk.css",
+    "static/js/main.9a5ebba6.chunk.js"
+  ]
+}
