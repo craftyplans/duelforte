@@ -1,4 +1,4 @@
-# Duel Forte
+# Skyrmysh
 
 A combat simulation system.
 
