@@ -26,3 +26,8 @@
 .body {
   min-height: 84vh;
 }
+
+select {
+       background-color: #282c34;
+       color: white;
+}

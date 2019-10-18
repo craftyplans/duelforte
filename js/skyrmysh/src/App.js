@@ -28,7 +28,9 @@ function App() {
             </header>    
             <div className="body">
             <p>Select up to 2 cards.</p>
-            {cards.map(c => <div>{c}</div>)}
+            <select size={cards.length} multiple>
+            {cards.map(c => <option>{c}</option>)}
+            </select>
             </div>
         </div>
   );
