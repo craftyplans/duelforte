@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/skyrmysh/static/css/main.adf7b017.chunk.css",
-    "main.js": "/skyrmysh/static/js/main.88458c08.chunk.js",
-    "main.js.map": "/skyrmysh/static/js/main.88458c08.chunk.js.map",
+    "main.css": "/skyrmysh/static/css/main.bfde2882.chunk.css",
+    "main.js": "/skyrmysh/static/js/main.f681fbab.chunk.js",
+    "main.js.map": "/skyrmysh/static/js/main.f681fbab.chunk.js.map",
     "runtime-main.js": "/skyrmysh/static/js/runtime-main.c67951f4.js",
     "runtime-main.js.map": "/skyrmysh/static/js/runtime-main.c67951f4.js.map",
     "static/js/2.9c2893d1.chunk.js": "/skyrmysh/static/js/2.9c2893d1.chunk.js",
     "static/js/2.9c2893d1.chunk.js.map": "/skyrmysh/static/js/2.9c2893d1.chunk.js.map",
     "index.html": "/skyrmysh/index.html",
-    "precache-manifest.85cf831f08a3d89c205a0465c5297606.js": "/skyrmysh/precache-manifest.85cf831f08a3d89c205a0465c5297606.js",
+    "precache-manifest.f578c50a1f1af553e130ae1fe2b4ec3b.js": "/skyrmysh/precache-manifest.f578c50a1f1af553e130ae1fe2b4ec3b.js",
     "service-worker.js": "/skyrmysh/service-worker.js",
-    "static/css/main.adf7b017.chunk.css.map": "/skyrmysh/static/css/main.adf7b017.chunk.css.map"
+    "static/css/main.bfde2882.chunk.css.map": "/skyrmysh/static/css/main.bfde2882.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.c67951f4.js",
     "static/js/2.9c2893d1.chunk.js",
-    "static/css/main.adf7b017.chunk.css",
-    "static/js/main.88458c08.chunk.js"
+    "static/css/main.bfde2882.chunk.css",
+    "static/js/main.f681fbab.chunk.js"
   ]
 }
