@@ -25,6 +25,12 @@
 
 .body {
   min-height: 84vh;
+  width: 100vh
+}
+
+.card-list {
+           justify-content: left; 
+           text-align: left;
 }
 
 select {
@@ -33,10 +39,11 @@ select {
 }
 
 .card {
-      margin : 1vh;
+      font-size: calc(10px + 1vmin);
+      padding : 1vh;
 }
 
-.card-selected {
+.selected {
       background-color: #C0C0C0;
-      margin : 1vh;
+      color: black;
 }

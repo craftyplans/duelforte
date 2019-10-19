@@ -27,7 +27,7 @@ class Card extends React.Component {
     render() {
         return (
                 <div
-            className={this.state.selected ? "card-selected" : "card"}
+            className={this.state.selected ? "card selected" : "card"}
             onClick={() => this.setState({selected: ! this.state.selected })}
                 >
                 {this.props.content}
@@ -44,7 +44,9 @@ function App() {
             </header>    
             <div className="body">
             <p>Select up to 2 cards.</p>
+            <div className="card-list">
             {cards.map(c => <Card content={c} />)}
+        </div>
             </div>
         </div>
   );
