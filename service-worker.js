@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/skyrmysh/precache-manifest.750c5ac1e90dafcd6fa24ecdb795ec3f.js"
+  "/skyrmysh/precache-manifest.85cf831f08a3d89c205a0465c5297606.js"
 );
 
 self.addEventListener('message', (event) => {
