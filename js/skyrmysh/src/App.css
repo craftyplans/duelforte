@@ -16,7 +16,7 @@
 }
 
 .App-header {
-  min-height: 15vh;
+  min-height: 10vh;
 }
 
 .App-link {
@@ -30,4 +30,13 @@
 select {
        background-color: #282c34;
        color: white;
+}
+
+.card {
+      margin : 1vh;
+}
+
+.card-selected {
+      background-color: #C0C0C0;
+      margin : 1vh;
 }

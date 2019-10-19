@@ -16,9 +16,25 @@ const cards = [
     "Full"
 ]
 
-//function cardDOM(card){
-//    return <div>{card}<div>
-//}
+class Card extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            selected: false,
+        };
+    }
+
+    render() {
+        return (
+                <div
+            className={this.state.selected ? "card-selected" : "card"}
+            onClick={() => this.setState({selected: ! this.state.selected })}
+                >
+                {this.props.content}
+            </div>
+        );
+    }
+}
 
 function App() {
     return (
@@ -28,9 +44,7 @@ function App() {
             </header>    
             <div className="body">
             <p>Select up to 2 cards.</p>
-            <select size={cards.length} multiple>
-            {cards.map(c => <option>{c}</option>)}
-            </select>
+            {cards.map(c => <Card content={c} />)}
             </div>
         </div>
   );
