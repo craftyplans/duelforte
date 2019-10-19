@@ -6,14 +6,14 @@ const cards = [
     "Quick Attack",
     "Hard Attack",
     "Precise Attack",
+    "Cast Spell",
     "Quick Defend",
     "Hard Defend",
     "Precise Defend",
-    "Move",
-    "Cast Spell",
     "Focus",
+    "Full",
+    "Move",
     "Other",
-    "Full"
 ]
 
 class Card extends React.Component {
