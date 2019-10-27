@@ -1,4 +1,19 @@
 {
     "name" : "Steve",
-    "actions" : 2
+    "actions" : 2,
+    "cards" : [
+        "Quick Attack",
+        "Hard Attack",
+        "Precise Attack",
+        "Cast Spell",
+        "Quick Defend",
+        "Hard Defend",
+        "Precise Defend",
+        "Focus",
+        "Full",
+        "Move",
+        "Other",
+        "Blink",
+        "Burst"
+    ]
 }

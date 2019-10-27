@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from './skyrmysh-logo.png';
 import './App.css';
-import cards from './cards.json'
 import character from './character.json'
 
 class Card extends React.Component {
@@ -33,7 +32,7 @@ function App() {
             <div className="body">
             <p>{character.name}, select up to {character.actions} cards.</p>
             <div className="card-list">
-            {cards.map(c => <Card content={c} />)}
+            {character.cards.map(c => <Card content={c} />)}
         </div>
             </div>
         </div>
