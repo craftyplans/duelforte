@@ -1,20 +1,7 @@
 import React from 'react';
 import logo from './skyrmysh-logo.png';
 import './App.css';
-
-const cards = [
-    "Quick Attack",
-    "Hard Attack",
-    "Precise Attack",
-    "Cast Spell",
-    "Quick Defend",
-    "Hard Defend",
-    "Precise Defend",
-    "Focus",
-    "Full",
-    "Move",
-    "Other",
-]
+import cards from './cards.json'
 
 class Card extends React.Component {
     constructor(props) {
